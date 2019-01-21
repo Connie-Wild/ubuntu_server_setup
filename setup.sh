@@ -48,6 +48,7 @@ cd ~
 # 完了
 # ------------------------
 echo "------------------------"
-echo "complete"
+echo "complete."
 python --version
+echo "Restart your computer."
 echo "------------------------"
