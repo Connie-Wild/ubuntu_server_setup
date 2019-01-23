@@ -7,6 +7,15 @@ sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 sudo sed -i 's/#NTP=/NTP=ntp.nict.jp/g' /etc/systemd/timesyncd.conf
 
 # ------------------------
+# リポジトリを日本(IIJ)に変更
+# ------------------------
+# ubuntu16.04
+sudo sed -i.bak -e "s%http://us.archive.ubuntu.com/ubuntu/%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
+# ubuntu18.04
+sudo sed -i -e "s%http://archive.ubuntu.com/ubuntu%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive%g" /etc/apt/sources.list
+sudo sed -i -e "/deb cdrom:*/d" /etc/apt/sources.list
+
+# ------------------------
 # OSアップデート
 # ------------------------
 sudo apt update
@@ -15,9 +24,13 @@ sudo apt autoremove -y
 sudo apt clean -y
 
 # ------------------------
+# パッケージインストール
+# ------------------------
+sudo apt install -y git gcc g++ make openssl zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev vim build-essential curl wget
+
+# ------------------------
 # pyenvの環境設定
 # ------------------------
-sudo apt install -y git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev vim
 git clone git://github.com/yyuu/pyenv.git ${HOME}/.pyenv
 cat << EOF >> ${HOME}/.profile
 export PYENV_ROOT=\${HOME}/.pyenv
