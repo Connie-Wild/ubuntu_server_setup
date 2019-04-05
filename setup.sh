@@ -4,7 +4,7 @@
 # 時刻同期
 # ------------------------
 sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-sudo sed -i 's/#NTP=/NTP=ntp.nict.jp/g' /etc/systemd/timesyncd.conf
+sudo sed -i 's/#NTP=/NTP=time.google.com/g' /etc/systemd/timesyncd.conf
 
 # ------------------------
 # リポジトリを日本(IIJ)に変更
