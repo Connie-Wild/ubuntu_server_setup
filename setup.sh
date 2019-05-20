@@ -35,6 +35,7 @@ git clone git://github.com/yyuu/pyenv.git ${HOME}/.pyenv
 cat << EOF >> ${HOME}/.profile
 export PYENV_ROOT=\${HOME}/.pyenv
 export PATH=\${PYENV_ROOT}/bin:\${PATH}
+export PYTHONPATH="\${HOME}:\$PYTHONPATH"
 eval "\$(pyenv init -)"
 EOF
 source ${HOME}/.profile
