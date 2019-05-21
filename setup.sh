@@ -1,12 +1,6 @@
 #!/bin/bash
 
 # ------------------------
-# 時刻同期
-# ------------------------
-sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-sudo sed -i 's/#NTP=/NTP=time.google.com/g' /etc/systemd/timesyncd.conf
-
-# ------------------------
 # リポジトリを日本(IIJ)に変更
 # ------------------------
 # ubuntu16.04
@@ -26,7 +20,13 @@ sudo apt clean -y
 # ------------------------
 # パッケージインストール
 # ------------------------
-sudo apt install -y git gcc g++ make openssl zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev vim build-essential curl wget
+sudo apt install -y tzdata git gcc g++ make openssl zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev vim build-essential curl wget
+
+# ------------------------
+# 時刻同期
+# ------------------------
+sudo ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+sudo sed -i 's/#NTP=/NTP=time.google.com/g' /etc/systemd/timesyncd.conf
 
 # ------------------------
 # pyenvの環境設定
