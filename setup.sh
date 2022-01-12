@@ -11,7 +11,7 @@ sudo apt clean -y
 # ------------------------
 # パッケージインストール
 # ------------------------
-sudo apt install -y build-essential libffi-dev zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+sudo apt install -y build-essential libffi-dev zlib1g-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
 
 # ------------------------
 # 時刻同期
