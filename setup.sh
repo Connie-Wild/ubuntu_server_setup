@@ -33,7 +33,7 @@ source ${HOME}/.profile
 pyenv install 3.8.10
 pyenv global 3.8.10
 pyenv rehash
-pip install -U pip
+pip install -U pip setuptools
 
 # ------------------------
 # talibのインストール
